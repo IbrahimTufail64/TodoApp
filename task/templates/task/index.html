@@ -1,0 +1,18 @@
+{%block content%}
+<form method="POST">
+  {%csrf_token%}
+  <label>Create Form: </label>
+  <p>{{form.title}}</p>
+  <p>{{form.description}}</p>
+  <input type="submit" name="Submit" />
+</form>
+{%for t in task%}
+<a href="{%url 'update' t.id%}">Edit</a>
+<a href="{%url 'delete' t.id%}">Delete</a>
+{%if t.complete == True%}
+<strike>{{t}}</strike>
+{%else%}
+<span>{{t}}</span>
+{%endif%}
+<p>{{t.created}}</p>
+{%endfor%} {%endblock content%}

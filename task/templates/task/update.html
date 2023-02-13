@@ -1,0 +1,7 @@
+{%block content%}
+<form method="POST">
+  {%csrf_token%}
+  <p>{{form}}</p>
+  <input type="submit" name="Submit" />
+</form>
+{%endblock content%}
