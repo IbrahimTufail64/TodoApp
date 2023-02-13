@@ -3,9 +3,13 @@ from django.http import HttpResponse
 from .models import *
 from .forms import TaskForm
 
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+
 # Create your views here.
 
-
+@api_view(["GET"])
 def index(request):
     task = tasks.objects.all()
     form = TaskForm()
